@@ -1,0 +1,5 @@
+
+# git will ignore the following folders and files
+reports/
+logs/
+*.png
