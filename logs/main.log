@@ -1,0 +1,44 @@
+2025-10-23 13:43:03,630 [INFO] MainPage: ============================================================
+2025-10-23 13:43:03,630 [INFO] MainPage: New Test Script started at 2025-10-23 13:43:03
+2025-10-23 13:43:03,630 [INFO] MainPage: ============================================================
+2025-10-23 13:43:07,324 [INFO] MainPage: Opening Twitch main page
+2025-10-23 13:43:07,779 [INFO] MainPage: Closing page modal if visible
+2025-10-23 13:43:07,815 [INFO] MainPage: Browse button displayed
+2025-10-23 13:43:09,798 [INFO] MainPage: Browsing StarCraft II and entering the category
+2025-10-23 13:43:09,802 [INFO] MainPage: StarCraft II category found
+2025-10-23 13:43:13,814 [INFO] MainPage: Scrolling down twice
+2025-10-23 13:43:13,948 [INFO] MainPage: Entering stream
+2025-10-23 13:43:22,949 [INFO] MainPage: Stream loaded successfully and screenshot taken
+2025-10-23 13:43:31,698 [INFO] MainPage: ============================================================
+2025-10-23 13:43:31,698 [INFO] MainPage: New Test Script started at 2025-10-23 13:43:31
+2025-10-23 13:43:31,698 [INFO] MainPage: ============================================================
+2025-10-23 13:43:34,380 [INFO] MainPage: Opening Twitch main page
+2025-10-23 13:43:34,783 [INFO] MainPage: Closing page modal if visible
+2025-10-23 13:43:34,799 [INFO] MainPage: Browse button displayed
+2025-10-23 13:43:36,772 [INFO] MainPage: Browsing StarCraft II and entering the category
+2025-10-23 13:43:36,779 [INFO] MainPage: StarCraft II category found
+2025-10-23 13:43:40,800 [INFO] MainPage: Scrolling down twice
+2025-10-23 13:43:40,948 [INFO] MainPage: Entering stream
+2025-10-23 13:43:49,932 [INFO] MainPage: Stream loaded successfully and screenshot taken
+2025-10-23 13:44:25,550 [INFO] MainPage: ============================================================
+2025-10-23 13:44:25,550 [INFO] MainPage: New Test Script started at 2025-10-23 13:44:25
+2025-10-23 13:44:25,550 [INFO] MainPage: ============================================================
+2025-10-23 13:44:28,171 [INFO] MainPage: Opening Twitch main page
+2025-10-23 13:44:28,685 [INFO] MainPage: Closing page modal if visible
+2025-10-23 13:44:28,748 [INFO] MainPage: Browse button displayed
+2025-10-23 13:44:30,923 [INFO] MainPage: Browsing StarCraft II and entering the category
+2025-10-23 13:44:30,927 [INFO] MainPage: StarCraft II category found
+2025-10-23 13:44:34,942 [INFO] MainPage: Scrolling down twice
+2025-10-23 13:44:35,127 [INFO] MainPage: Entering stream
+2025-10-23 13:44:43,085 [INFO] MainPage: Stream loaded successfully and screenshot taken
+2025-10-23 13:44:49,719 [INFO] MainPage: ============================================================
+2025-10-23 13:44:49,719 [INFO] MainPage: New Test Script started at 2025-10-23 13:44:49
+2025-10-23 13:44:49,720 [INFO] MainPage: ============================================================
+2025-10-23 13:44:53,451 [INFO] MainPage: Opening Twitch main page
+2025-10-23 13:44:54,009 [INFO] MainPage: Closing page modal if visible
+2025-10-23 13:44:54,091 [INFO] MainPage: Browse button displayed
+2025-10-23 13:44:55,481 [INFO] MainPage: Browsing StarCraft II and entering the category
+2025-10-23 13:44:55,485 [INFO] MainPage: StarCraft II category found
+2025-10-23 13:44:59,497 [INFO] MainPage: Scrolling down twice
+2025-10-23 13:44:59,662 [INFO] MainPage: Entering stream
+2025-10-23 13:45:07,655 [INFO] MainPage: Stream loaded successfully and screenshot taken

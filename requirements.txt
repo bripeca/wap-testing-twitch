@@ -1,0 +1,8 @@
+pytest==8.4.2
+selenium==4.37.0
+webdriver-manager== 4.0.2
+pytest-html==4.1.1 # reporting
+pytest-xdist==3.8.0 # xdist for testing parallelization
+iniconfig==2.3.0
+pytest-metadata==3.1.1
+pytest-rerunfailures==12.0
