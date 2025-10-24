@@ -19,8 +19,9 @@ class TestTwitchMainPage:
         main_page.find_stream("StarCraft II")
         assert main_page.expected_starcraft_search_url in driver.current_url, "Actual URL is not the StarCraft II category"
 
-        # scroll down twice
+        # scroll down and up twice to find the first stream
         main_page.scroll_down_twice()
+        main_page.scroll_up_twice()
 
         # select one streamer
         main_page.enter_stream()
