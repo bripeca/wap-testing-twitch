@@ -1,7 +1,9 @@
 from selenium.common import ElementClickInterceptedException, TimeoutException
-from selenium.webdriver import ActionChains
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 from page_objects.base_page import BasePage
 from utilities.logger import get_logger
@@ -17,8 +19,8 @@ class MainPage(BasePage):
     browse_field = (By.XPATH, "//input[@placeholder='Search']")
     starcraft_search_result = (By.XPATH, "//a[@href='/directory/category/starcraft-ii']//img")
     first_displayed_stream = (By.XPATH, "//div[@role='list']//article[1]//button[contains(@class,'tw-link')]")
-    content_modal_watch_button = (By.XPATH, "//button[@data-a-target='content-classification-gate-overlay-start-"
-                                            "watching-button']")
+    content_modal_watch_button = (By.XPATH,
+                                  "//button[@data-a-target='content-classification-gate-overlay-start-""watching-button']")
     follow_button = (By.XPATH, "//button[contains(., 'Follow')]")
 
     # driver initialization
@@ -28,6 +30,7 @@ class MainPage(BasePage):
 
     def open(self):
         super().open_url(self.main_page_url)
+        self.log.info("Opening Twitch main page")
 
     @property
     def expected_starcraft_search_url(self) -> str:
@@ -35,29 +38,26 @@ class MainPage(BasePage):
 
     # search for input and click on the Starcraft II category
     def find_stream(self, search_input: str):
+        self.log.info("Finding game category")
         super().click(self.browse_button)
         super().type(self.browse_field, search_input)
         super().click(self.starcraft_search_result)
 
     # double scroll down twice, if needed only one it can be called from the base_page.py
+    def scroll_up_twice(self):
+        self.log.info("Scrolling down twice")
+        super().scroll_up(times=2)
+
     def scroll_down_twice(self):
-        super().scroll_down()
-        super().scroll_down()
+        self.log.info("Scrolling up twice")
+        super().scroll_down(times=2)
 
     def enter_stream(self):
+        self.log.info("Entering stream")
         super().click(self.first_displayed_stream)
-        # this will look for the content gate modal if enabled on a stream
-        # if not found it will not block test scrips and will continue as normal
-        buttons = self.driver.find_elements(*self.content_modal_watch_button)
-        if not buttons:
-            return  # modal not present — continue test normally
-        try:
-            buttons[0].click()
-        # if button is not visible for any reason it will click the button anyways
-        except ElementClickInterceptedException:
-            self.driver.execute_script("arguments[0].click();", buttons[0])
 
     def is_browse_button_displayed(self) -> bool:
+        self.log.info("Looking for browse button")
         return super().is_displayed(self.browse_button)
 
     # check constantly if the stream loads in the page.
@@ -75,5 +75,16 @@ class MainPage(BasePage):
     '''
 
     def close_page_modal(self):
+        self.log.info("Closing page modal if visible")
         actions = ActionChains(self.driver)
         actions.move_by_offset(0, 0).click().perform()
+
+
+    # close the "intended for certain audiences" modal when opening some streams, if found, if not it ignores it.
+    def close_content_modal(self, timer: int = 5):
+        self.log.info("Closing content modal if visible")
+        try:
+            wait = WebDriverWait(self.driver, timer)
+            wait.until(EC.element_to_be_clickable(self.content_modal_watch_button)).click()
+        except TimeoutException:
+            pass
