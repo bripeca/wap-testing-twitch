@@ -8,7 +8,6 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-
 from utilities.logger import get_logger
 
 
@@ -17,7 +16,6 @@ class BasePage:
     def __init__(self, driver: WebDriver):
         self.driver = driver
         self.log = get_logger(self.__class__.__name__)
-
 
     def open_url(self, url: str):
         self.driver.get(url)
@@ -67,4 +65,3 @@ class BasePage:
         self.driver.save_screenshot(file_path)
         print("Screenshot saved: {file_path}")
         return file_path
-
