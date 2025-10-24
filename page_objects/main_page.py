@@ -1,5 +1,5 @@
-from selenium.common import ElementClickInterceptedException, TimeoutException
-from selenium.webdriver import ActionChains, Keys
+from selenium.common import TimeoutException
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
@@ -43,11 +43,12 @@ class MainPage(BasePage):
         super().type(self.browse_field, search_input)
         super().click(self.starcraft_search_result)
 
-    # double scroll down twice, if needed only one it can be called from the base_page.py
+    # scroll up twice, modify the times variable to make it once or more than twice.
     def scroll_up_twice(self):
         self.log.info("Scrolling down twice")
         super().scroll_up(times=2)
 
+    # scroll down twice, modify the times variable to make it once or more than twice.
     def scroll_down_twice(self):
         self.log.info("Scrolling up twice")
         super().scroll_down(times=2)
@@ -78,7 +79,6 @@ class MainPage(BasePage):
         self.log.info("Closing page modal if visible")
         actions = ActionChains(self.driver)
         actions.move_by_offset(0, 0).click().perform()
-
 
     # close the "intended for certain audiences" modal when opening some streams, if found, if not it ignores it.
     def close_content_modal(self, timer: int = 5):
